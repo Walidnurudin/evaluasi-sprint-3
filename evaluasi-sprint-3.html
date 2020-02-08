@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Kalkulator sederhana</title>
+  <link rel="short icon" href="1.png">
+  <style>
+    body {
+      background: lightblue;  
+      text-align: center;
+    }
+    
+    div {
+      border: 5px solid yellow;
+      width: 300px;
+      height: 180px;
+      margin: auto;
+      border-radius: 10px;
+      background: gray;
+    }
+    
+    input {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+    }
+
+    button {
+        margin-top: 5px;
+        padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Kalkulator sedrhana</h1>
+  <hr>
+  <div>
+    <input type="number" id="inputSatu" placeholder="masukan nilai pertama">
+    <br>
+    <input type="number" id="inputDua" placeholder="masukan nilai kedua">
+    <br>
+    <button onClick="hasilTambah()">+</button>
+    <button onClick="hasilKurang()">-</button>
+    <button onClick="hasilKali()">x</button>
+    <button onClick="hasilBagi()">/</button>
+  </div>
+  
+  <h2 id="hasil">___</h2>
+
+  <script>
+        // pertama buat variabel untuk mengambil id setiap elementnya
+
+        var input1 = document.getElementById("inputSatu")
+        var input2 = document.getElementById("inputDua")
+        var hasil = document.getElementById("hasil")
+
+        // kedua buat eventListener gunankan "target.value" untuk mengambil isi/value dari input
+
+        input1.addEventListener("change", function(event){
+        input1.innerHTML = event.target.value;
+        
+        })
+
+        input2.addEventListener("change", function(event){
+        input2.innerHTML = event.target.value;
+
+        })
+        
+
+        // buat fungsi untuk membuat penjumlahan berfungsi dan membuat output hasil dari penjumlahan
+
+        function hasilTambah(){
+        hasil.innerHTML = Number(input1.value) + Number(input2.value);
+        }
+
+        function hasilKurang(){
+        hasil.innerHTML = Number(input1.value) - Number(input2.value);
+        }
+
+        function hasilKali(){
+        hasil.innerHTML = Number(input1.value) * Number(input2.value);
+        }
+
+        function hasilBagi(){
+        hasil.innerHTML = Number(input1.value) / Number(input2.value);
+        }
+  </script>
+  
+</body>
+</html>
